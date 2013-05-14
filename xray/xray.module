@@ -1,0 +1,19 @@
+<?php
+/**
+ * @file
+ * Helps site builders and module developers investigate a site
+ */
+ 
+/** * Implements hook_form_alter() to show each form's identifier.
+ */
+function xray_form_alter(&$form, &$form_state, $form_id) {
+	debug($form, $form_id, TRUE);
+}
+
+/** * Implements hook_help()
+ */
+function xray_help($path, $arg) {
+	if($path == 'admin/structure') {
+		return t('This site has stuff!');
+	}
+}
